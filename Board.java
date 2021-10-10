@@ -2,7 +2,7 @@ public class Board {
     private char[][] board;
 
     public Board(){
-        board = new char[7][6];
+        board = new char[7][7];
         initializeBoard();
     }   
 

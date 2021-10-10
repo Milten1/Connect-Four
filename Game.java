@@ -45,5 +45,8 @@ public class Game {
             board.initializeBoard();
             start();
         }
+
+        scanner.close();
     }
+    
 }
