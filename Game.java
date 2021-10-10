@@ -19,21 +19,31 @@ public class Game {
 
         while(true){
             if(i % 2 == 0 && yn.equals("y")){
-                board.setBoard(logic.moveRandom(board.getBoard()));
-                board.printBoard();
+                board.setBoard(logic.moveRandom(board.getBoard(), 'O'));
             }else{
                 board.printBoard();
-                System.out.println("Choose field or type 'exit' to end game: ");
+                System.out.println("Choose number or type 'exit' to end game: ");
                 String command = scanner.next();
-                if(command.equals("exit")) break;
+                if(command.toLowerCase().equals("exit")) break;
 
-                if(command.toLowerCase().matches("[a-f][1-7]")) board.setBoard(logic.move(board.getBoard(), command));
-            }
-            
+                if(command.toLowerCase().matches("[1-6]")) {
+                    if(i % 2 == 0) board.setBoard(logic.move(board.getBoard(), command, 'O'));
+                    else board.setBoard(logic.move(board.getBoard(), command, 'X'));
+                }
+            }           
+
+            if(logic.isDraw(board.getBoard()) || logic.isWin(board.getBoard())) break;
 
 
             i++;
         }
 
+        System.out.println("Game over. Do you want to play again? (y/n)");
+        yn = scanner.next();
+
+        if(yn.toLowerCase().equals("y")) {
+            board.initializeBoard();
+            start();
+        }
     }
 }

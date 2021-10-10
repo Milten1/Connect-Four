@@ -15,14 +15,12 @@ public class Board {
     }
 
     public void printBoard(){
-        System.out.print("  ");
-        for(char ch = 'A'; ch <= 'F'; ch++ ){
-            System.out.print(" " + ch + " ");
+        for(int i = 1; i < 7; i++ ){
+            System.out.print(" " + i + " ");
         }
         
         System.out.println();
-         for(int i = 6; i >= 0; i--){
-             System.out.print(i+1 + " ");
+         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 6; j++){
                 System.out.print("[" + board[i][j] + "]");
             }
