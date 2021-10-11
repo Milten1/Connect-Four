@@ -10,7 +10,7 @@ public class Game {
     }
 
     public void start() {
-        System.out.print("Do you want to play with AI? If not you will be playing with second player (y/n): ");
+        System.out.print("Do you want to play with AI? If not you will be playing with the second player (y/n): ");
         Scanner scanner = new Scanner(System.in);
         String yn = scanner.nextLine();
         System.out.println();
@@ -34,6 +34,10 @@ public class Game {
 
             if(logic.isDraw(board.getBoard()) || logic.isWin(board.getBoard())) break;
 
+            if(board.getBoard()[6][6] == 't'){
+                board.getBoard()[6][6] = 'f';
+                continue;
+            }
 
             i++;
         }

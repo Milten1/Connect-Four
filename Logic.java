@@ -4,10 +4,11 @@ public class Logic {
         int number = 1 + (int)(Math.random() * 6);
 
         for(int i = 5; i >= 0; i--){
-            if(board[i][number-1] == (' ')){
+            if(board[i][number-1] == ' '){
                 board[i][number-1] = player;
                 break;
             }
+            if(board[i][number-1] != ' ' && i == 0) board[6][6] = 't';
         }
 
         return board;
@@ -17,10 +18,11 @@ public class Logic {
         int number = Integer.valueOf(command);
 
         for(int i = 5; i >= 0; i--){
-            if(board[i][number-1] == (' ')){
+            if(board[i][number-1] == ' '){
                 board[i][number-1] = player;
                 break;
             }
+            if(board[i][number-1] != ' ' && i == 0) board[6][6] = 't';
         }
 
         return board;
