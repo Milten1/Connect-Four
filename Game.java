@@ -26,14 +26,16 @@ public class Game {
                 String command = scanner.next();
                 if(command.toLowerCase().equals("exit")) break;
 
-                if(command.toLowerCase().matches("[1-6]")) {
+                if(command.toLowerCase().matches("[1-7]")) {
                     if(i % 2 == 0) board.setBoard(logic.move(board.getBoard(), command, 'O'));
                     else board.setBoard(logic.move(board.getBoard(), command, 'X'));
-                }
+                }else continue;
             }           
 
-            if(logic.isDraw(board.getBoard()) || logic.isWin(board.getBoard())) break;
-
+            if(logic.isDraw(board.getBoard()) || logic.isWin(board.getBoard())) {
+                board.printBoard();
+                break;
+            }
             if(board.getBoard()[6][6] == 't'){
                 board.getBoard()[6][6] = 'f';
                 continue;

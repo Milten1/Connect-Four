@@ -1,7 +1,7 @@
 public class Logic {
 
     public char[][] moveRandom(char[][] board, char player) {
-        int number = 1 + (int)(Math.random() * 6);
+        int number = 1 + (int)(Math.random() * 7);
 
         for(int i = 5; i >= 0; i--){
             if(board[i][number-1] == ' '){
@@ -29,7 +29,12 @@ public class Logic {
     }
 
     public boolean isDraw(char[][] board){
-        return false;
+        for(int i = 0; i < 6; i++){
+            for(int j = 0; j < 7; j++){
+                if(board[i][j] == ' ') return false;
+            }
+        }
+        return true;
     }
 
     public boolean isWin(char[][] board){

@@ -15,13 +15,13 @@ public class Board {
     }
 
     public void printBoard(){
-        for(int i = 1; i < 7; i++ ){
+        for(int i = 1; i <= 7; i++ ){
             System.out.print(" " + i + " ");
         }
         
         System.out.println();
          for(int i = 0; i < 6; i++){
-            for(int j = 0; j < 6; j++){
+            for(int j = 0; j < 7; j++){
                 System.out.print("[" + board[i][j] + "]");
             }
              System.out.println();
@@ -29,8 +29,8 @@ public class Board {
     }
 
     public void initializeBoard() {
-        for(int i = 0; i < 7; i++){
-            for(int j = 0; j < 6; j++){
+        for(int i = 0; i < 6; i++){
+            for(int j = 0; j < 7; j++){
                 this.board[i][j] = ' ';
             }
         }
