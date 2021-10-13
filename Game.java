@@ -10,6 +10,7 @@ public class Game {
     }
 
     public void start() {
+        board.printEmptyBoard();
         System.out.print("Do you want to play with AI? If not you will be playing with the second player (y/n): ");
         Scanner scanner = new Scanner(System.in);
         String yn = scanner.nextLine();

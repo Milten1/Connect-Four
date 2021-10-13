@@ -38,6 +38,25 @@ public class Logic {
     }
 
     public boolean isWin(char[][] board){
+        try {
+            for(int i = 0; i < 6; i++){
+                for(int j = 0; j < 7; j++){
+                    if((board[i][j] == 'X' && board[i][j+1] == 'X' && board[i][j+2] == 'X' && board[i][j+3] == 'X') || 
+                       (board[i][j] == 'O' && board[i][j+1] == 'O' && board[i][j+2] == 'O' && board[i][j+3] == 'O') || 
+                       (board[i][j] == 'X' && board[i+1][j] == 'X' && board[i+2][j] == 'X' && board[i+3][j] == 'X') || 
+                       (board[i][j] == 'O' && board[i+1][j] == 'O' && board[i+2][j] == 'O' && board[i+3][j] == 'O')) return true;
+
+                    if((board[i][j] == 'X' && board[i+1][j+1] == 'X' && board[i+2][j+2] == 'X' && board[i+3][j+3] == 'X') || 
+                       (board[i][j] == 'O' && board[i+1][j+1] == 'O' && board[i+2][j+2] == 'O' && board[i+3][j+3] == 'O') || 
+                       (board[i][j] == 'X' && board[i+1][j-1] == 'X' && board[i+2][j-2] == 'X' && board[i+3][j-3] == 'X') || 
+                       (board[i][j] == 'O' && board[i+1][j-1] == 'O' && board[i+2][j-2] == 'O' && board[i+3][j-3] == 'O')) return true;
+                }
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+
+        
         return false;
     }
 }
